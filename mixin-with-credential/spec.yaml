@@ -1,0 +1,14 @@
+schemaVersion: "2"
+kind: mixin
+name: credential-repro
+displayName: Credential Repro
+description: Declares a single unrelated apiKey credential. Composing this flips anthropic to api-key mode.
+
+credentials:
+    - service: example-service
+      apiKey:
+          name: ""
+          inject:
+              - domain: api.example.com
+                header: X-Example-Token
+                format: "%s"
